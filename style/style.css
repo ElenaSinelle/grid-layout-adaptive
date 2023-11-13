@@ -36,6 +36,13 @@ html,
   grid-template-rows: 20% 1fr max-content;
   grid-template-areas: "header header header" "main main aside" "footer footer footer";
 }
+@media screen and (max-width: 486px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 1fr 20% max-content;
+    grid-template-areas: "header" "main" "aside" "footer";
+  }
+}
 .grid-container > * {
   padding: 0.8rem 1.2rem;
 }
@@ -131,6 +138,11 @@ html,
   transition: all ease-in 0.3s;
   padding: 0.4rem;
 }
+@media screen and (max-width: 486px) {
+  .grid-container .main__section {
+    min-height: 2rem;
+  }
+}
 @media (hover: hover) {
   .grid-container .main__section:hover {
     background-color: rgba(244, 159, 228, 0.6);
@@ -169,6 +181,11 @@ html,
   transition: all ease-in 0.3s;
   padding: 0.4rem;
 }
+@media screen and (max-width: 486px) {
+  .grid-container .footer__item {
+    min-height: 2rem;
+  }
+}
 @media (hover: hover) {
   .grid-container .footer__item:hover {
     background-color: rgba(140, 198, 199, 0.5);
@@ -206,4 +223,15 @@ html,
   .grid-container .footer__item-4 {
     grid-area: footer__item-4;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+@media screen and (max-width: 486px) {
+  .grid-container .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.4rem;
+    grid-template-areas: "footer__item-2" "footer__item-3" "footer__item-4";
+  }
+  .grid-container .footer__item-1 {
+    display: none;
+  }
+}
