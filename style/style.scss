@@ -34,6 +34,16 @@ html,
         "main main aside"
         "footer footer footer";
 
+  @media screen and (max-width: 486px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 1fr 20% max-content;
+    grid-template-areas:
+        "header"
+        "main"
+        "aside"
+        "footer";
+  }
+
   & > * {
     padding: $padding-smaller $padding-max;
 
@@ -126,6 +136,10 @@ html,
       transition: $transition;
       padding: $padding-min;
 
+      @media screen and (max-width: 486px) {
+        min-height: 2rem;
+      }
+
       @media (hover: hover) {
         &:hover {
           @include hover-scale-max($dark-pink-color);
@@ -165,6 +179,10 @@ html,
       @include flex-container-centered;
       transition: $transition;
       padding: $padding-min;
+
+      @media screen and (max-width: 486px) {
+        min-height: 2rem;
+      }
 
       @media (hover: hover) {
         &:hover {
@@ -208,6 +226,19 @@ html,
 
       &__item-4 {
         grid-area: footer__item-4;
+      }
+    }
+
+    @media screen and (max-width: 486px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: $padding-min;
+      grid-template-areas:
+              "footer__item-2"
+              "footer__item-3"
+              "footer__item-4";
+      &__item-1 {
+        display: none;
       }
     }
   }
